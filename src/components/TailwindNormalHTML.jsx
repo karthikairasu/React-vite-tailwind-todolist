@@ -41,9 +41,9 @@ const TodoListTailwind = () => {
     const updated = [...list];
     const index = updated.findIndex((item) => item.id === id); 
     if(updated[index].checked){
-      updated[index].status = "deleted";
+      const filtered = updated.filter(item => item.id !== id); 
+      setList(filtered)
     }
-    setList(updated)
   }
 
   return (
@@ -60,8 +60,6 @@ const TodoListTailwind = () => {
                   <button className="h-10 pt-1 px-4 py-1.5 bg-green-600 text-white font-medium rounded-md shadow hover:bg-green-700 transition text-sm" onClick={()=>addActive()}>+</button>
                 </div>
               </div>
-            </div>
-            <div className="-mr-2 flex items-center sm:hidden">
             </div>
           </div>
         </div>
