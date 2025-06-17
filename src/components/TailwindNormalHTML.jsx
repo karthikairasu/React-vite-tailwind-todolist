@@ -42,7 +42,8 @@ const TodoListTailwind = () => {
     const index = updated.findIndex((item) => item.id === id); 
     if(updated[index].checked){
       const filtered = updated.filter(item => item.id !== id); 
-      setList(filtered)
+      setList(filtered);
+      toast.success("Task removed successfully!", { autoClose: 1000, pauseOnHover: false });
     }
   }
 
